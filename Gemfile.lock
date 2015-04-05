@@ -2,6 +2,8 @@ GEM
   remote: http://rubygems.org/
   specs:
     addressable (2.3.8)
+    daemons (1.2.2)
+    eventmachine (1.0.7)
     excon (0.45.1)
     haml (4.0.5)
       tilt
@@ -32,6 +34,10 @@ GEM
       rack (~> 1.4)
       rack-protection (~> 1.4)
       tilt (>= 1.3, < 3)
+    thin (1.6.3)
+      daemons (~> 1.0, >= 1.0.9)
+      eventmachine (~> 1.0)
+      rack (~> 1.0)
     tilt (2.0.1)
 
 PLATFORMS
@@ -42,3 +48,4 @@ DEPENDENCIES
   heroku (= 3.30.6)
   shotgun
   sinatra (= 1.4.6)
+  thin

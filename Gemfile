@@ -8,3 +8,7 @@ group :development do
   gem 'heroku', '3.30.6'
   gem 'shotgun'
 end
+
+group :production do
+  gem 'thin'
+end
