@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require 'sinatra/asset_pipeline'
 
 class PersonalWebsite < Sinatra::Application
   register Sinatra::AssetPipeline
