@@ -1,6 +1,7 @@
 require 'sinatra/base'
 
 class PersonalWebsite < Sinatra::Application
+  register Sinatra::AssetPipeline
 
   configure do
     set :haml, layout_options: {views: 'views/layouts'}
