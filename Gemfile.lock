@@ -23,6 +23,7 @@ GEM
       excon (~> 0.44)
       multi_json (~> 1.8)
     hike (1.2.3)
+    json (1.8.2)
     launchy (2.4.3)
       addressable (~> 2.3)
     mime-types (2.4.3)
@@ -65,6 +66,9 @@ GEM
       eventmachine (~> 1.0)
       rack (~> 1.0)
     tilt (1.4.1)
+    uglifier (2.7.1)
+      execjs (>= 0.3.0)
+      json (>= 1.8.0)
 
 PLATFORMS
   ruby
@@ -72,7 +76,9 @@ PLATFORMS
 DEPENDENCIES
   haml
   heroku (= 3.30.6)
+  sass
   shotgun
   sinatra (= 1.4.6)
   sinatra-asset-pipeline
   thin
+  uglifier
