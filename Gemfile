@@ -2,7 +2,7 @@ source 'http://rubygems.org'
 ruby '2.2.1'
 
 gem 'sinatra', '1.4.6'
-gem 'sinatra-asset-pipeline'
+gem 'sinatra-assetpack', require: 'sinatra/assetpack'
 gem 'haml'
 gem 'uglifier'
 gem 'sass'

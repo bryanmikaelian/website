@@ -1,4 +1,4 @@
-require 'sinatra/asset_pipeline/task'
-require './app'
+APP_FILE  = 'app.rb'
+APP_CLASS = 'Sinatra::Application'
 
-Sinatra::AssetPipeline::Task.define! PersonalWebsite
+require 'sinatra/assetpack/rake'
