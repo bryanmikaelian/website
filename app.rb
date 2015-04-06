@@ -1,6 +1,4 @@
 Bundler.require
-require 'sinatra/base'
-require 'sinatra/asset_pipeline'
 
 class PersonalWebsite < Sinatra::Application
   configure do
