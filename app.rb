@@ -16,9 +16,6 @@ class PersonalWebsite < Sinatra::Application
       '/stylesheets/*.css',
     ]
 
-    serve '/images', from: 'app/assets/images'
-
-
     js_compression  :uglify
     css_compression :sass
   end
