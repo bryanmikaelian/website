@@ -8,6 +8,7 @@ gem 'sprockets', '~> 2.0'
 gem 'haml'
 gem 'uglifier'
 gem 'sass'
+gem 'xml-sitemap'
 
 
 group :development do
