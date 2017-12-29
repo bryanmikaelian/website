@@ -23,6 +23,15 @@ const config = {
         use: [ 'style-loader', 'css-loader' ]
       },
       { test: /\.js$/, exclude: /node_modules/, loader: "babel-loader" },
+      {
+        test: /\.png$/,  
+        use: [{
+          loader: 'url-loader',
+          options: { 
+            name: 'images/[name].[ext]'
+          } 
+        }]
+      }
     ]
   }
 }

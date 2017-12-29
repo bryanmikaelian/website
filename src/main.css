@@ -23,14 +23,12 @@ body #top {
   align-items: center;
   justify-content: center;
   margin-top: 10px;
-  margin-bottom: 60px;
 }
 
 body #content {
-  width: 50%;
   justify-content: center;
-  margin-left: auto;
-  margin-right: auto;
+  align-items: center;
+  margin: 10px;
 }
 
 #content h2 a {
@@ -38,9 +36,19 @@ body #content {
   font-size: 24px;
 }
 
-#content #posts a {
-  text-transform: initial;
+#content p {
   font-size: 16px;
+  font-weight: 200;
+  max-width: 500px;
+  margin: 10px 0;
+}
+
+#content a {
+  text-transform: initial;
+  font-size: 14px;
+}
+
+#content p a {
   margin: 0;
 }
 
@@ -55,4 +63,10 @@ a {
 a:hover {
   text-decoration: underline;
   color: #4ea07a;
+}
+
+img {
+  width: 250px;
+  height: 250px;
+  align-self: center; 
 }
