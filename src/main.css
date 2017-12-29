@@ -38,6 +38,12 @@ body #content {
   font-size: 24px;
 }
 
+#content #posts a {
+  text-transform: initial;
+  font-size: 16px;
+  margin: 0;
+}
+
 a {
   font-size: 12px;
   font-weight: 200;

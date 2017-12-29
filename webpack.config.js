@@ -1,16 +1,28 @@
 const path = require('path');
 
 const config = {
-  entry: './index.js',
+  entry: './src/index.js',
 
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'app.bundle.js'
   },
 
+  resolve: {
+    alias: {
+      'react': 'preact-compat',
+      'react-dom': 'preact-compat',
+    }
+  },
+
   module: {
     rules: [
-      { test: /\.js$/, exclude: /node_modules/, loader: "babel-loader" }
+      {
+        test: /\.css$/,
+        exclude: /node_modules/,
+        use: [ 'style-loader', 'css-loader' ]
+      },
+      { test: /\.js$/, exclude: /node_modules/, loader: "babel-loader" },
     ]
   }
 }

@@ -5,8 +5,7 @@ import {
   Link
 } from 'react-router-dom'
 
-import css from './main.css';
-import posts from './posts.json';
+import posts from './posts.json'
 
 const Nav = () => {
   return (
