@@ -1,0 +1,8 @@
+#!/bin/bash
+
+set -e
+
+aws s3 cp index.html s3://bryanmikaelian.com
+aws s3 cp dist/app.bundle.js s3://bryanmikaelian.com
+
+exit 0

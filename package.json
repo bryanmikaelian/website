@@ -23,7 +23,8 @@
   },
   "scripts": {
     "test": "test",
-    "start:dev": "webpack-dev-server"
+    "start:dev": "webpack-dev-server",
+    "deploy": "NODE_ENV=production webpack -p && ./bin/deploy"
   },
   "repository": {
     "type": "git",
