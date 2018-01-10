@@ -14,6 +14,20 @@ h2 {
   font-weight:300;
 }
 
+a {
+  font-size: 12px;
+  font-weight: 200;
+  text-transform: uppercase;
+  color: #000;
+  margin: 0 5px;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: #4ea07a;
+}
+
+
 body #content, body #top {
   display: flex;
   flex-direction: column;
@@ -46,23 +60,24 @@ body #content {
 #content a {
   text-transform: initial;
   font-size: 14px;
+  margin: 0;
 }
 
 #content p a {
   margin: 0;
 }
 
-a {
-  font-size: 12px;
-  font-weight: 200;
-  text-transform: uppercase;
-  color: #000;
-  margin: 0 5px;
+#content.markdown {
+  text-align: left;
+  font-size: 16px;
 }
 
-a:hover {
-  text-decoration: underline;
-  color: #4ea07a;
+.markdown h1 {
+  font-size: 32px;
+}
+
+#content.markdown a {
+  font-size: 16px;
 }
 
 img {

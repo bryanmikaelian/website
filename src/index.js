@@ -1,4 +1,5 @@
 import { h, render, Component } from 'preact';
+import camelCase from "lodash/camelcase";
 import {
   HashRouter as Router,
   Route,
@@ -8,6 +9,8 @@ import {
 import css from './main.css';
 import posts from './posts.json';
 import image from './me.png';
+
+import * as mdPosts from './md';
 
 const Nav = () => {
   return (
@@ -57,11 +60,15 @@ const About = () => {
   )
 }
 
-const Post = () => {
+const Post = ({match}) => {
+  const { params } = match;
+  const { id } = params;
+  const postId = camelCase(id);
+  const post = mdPosts[postId];
   return (
     <div>
       <Nav />
-      <div id="content">
+      <div id="content" className="markdown" dangerouslySetInnerHTML={{__html: post}}>
       </div>
     </div>
   )
