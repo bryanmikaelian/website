@@ -10,9 +10,23 @@ h1 {
   margin-bottom: 0;
 }
 
-h2 {
+h2, h3, h4, h5 {
   font-weight:300;
 }
+
+a {
+  font-size: 12px;
+  font-weight: 200;
+  text-transform: uppercase;
+  color: #000;
+  margin: 0 5px;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: #4ea07a;
+}
+
 
 body #content, body #top {
   display: flex;
@@ -46,27 +60,33 @@ body #content {
 #content a {
   text-transform: initial;
   font-size: 14px;
+  margin: 0;
 }
 
 #content p a {
   margin: 0;
 }
 
-a {
-  font-size: 12px;
-  font-weight: 200;
-  text-transform: uppercase;
-  color: #000;
-  margin: 0 5px;
+#content.markdown {
+  text-align: left;
+  font-size: 16px;
 }
 
-a:hover {
-  text-decoration: underline;
-  color: #4ea07a;
+.markdown h1 {
+  font-size: 32px;
+}
+
+#content.markdown a {
+  font-size: 16px;
 }
 
 img {
   width: 250px;
   height: 250px;
   align-self: center; 
+}
+
+blockquote {
+  padding-left: 40px;
+  font-style: italic;
 }

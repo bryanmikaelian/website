@@ -23,6 +23,13 @@ const config = {
         use: [ 'style-loader', 'css-loader' ]
       },
       { test: /\.js$/, exclude: /node_modules/, loader: "babel-loader" },
+      { 
+        test: /\.md$/,
+        use: [
+          'html-loader', 'markdown-loader'
+        ]
+
+      },
       {
         test: /\.png$/,  
         use: [{
