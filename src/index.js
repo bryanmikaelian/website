@@ -60,6 +60,22 @@ const About = () => {
   )
 }
 
+const Posts = () => {
+  return (
+    <div>
+      <div id="content" className="flushLeft">
+        <div id="posts">
+          {posts.map(post => {
+            const { id, title } = post;
+            const url = `/posts/${id}`
+            return <Link id={id} to={url}>{title}</Link>
+          })}
+        </div>
+      </div>
+    </div>
+  )
+}
+
 const Post = ({match}) => {
   const { params } = match;
   const { id } = params;
@@ -81,6 +97,7 @@ class App extends Component {
         <div>
           <Route exact path="/" component={Home}/>
           <Route path="/about" component={About}/>
+          <Route path="/posts/" component={Posts}/>
           <Route path="/posts/:id" component={Post}/>
         </div>
       </Router>
