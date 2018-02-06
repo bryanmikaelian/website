@@ -63,6 +63,7 @@ const About = () => {
 const Posts = () => {
   return (
     <div>
+      <Nav />
       <div id="content" className="flushLeft">
         <div id="posts">
           {posts.map(post => {
