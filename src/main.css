@@ -48,6 +48,7 @@ body #content {
 #content h2 a {
   text-transform: initial;
   font-size: 24px;
+  margin-left: 5px;
 }
 
 #content p {
@@ -78,6 +79,10 @@ body #content {
 
 #content.markdown a {
   font-size: 16px;
+}
+
+#posts a {
+  display: block;
 }
 
 img {
