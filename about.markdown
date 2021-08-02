@@ -4,15 +4,24 @@ title: About
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
-
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
-
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
+Hi. I'm Bryan. I've been coding since 2005 and writing software, professionally, since 2010.  I currently work at Netlify as a Backend Engineer (We're [hiring!](https://www.netlify.com/careers/)).
 
 
-[jekyll-organization]: https://github.com/jekyll
+In the past, I've worked at:
+
+- Segment - [https://www.segment.com](https://www.segment.com)
+- Librato - [https://www.librato.com](https://www.librato.com)
+- BookShout - [https://www.bookshout.com](https://www.bookshout.com)
+- Fellowship Tech - [https://www.fellowshiptech.com](https://www.fellowshiptech.com)
+
+
+The languages I enjoy writing and for how long (in no particular order):
+
+- Ruby (since 2010)
+- Clojure (since 2014)
+- Kotlin (since 2020)
+- Golang (since 2015)
+- TypeScript (since 2018)
+
+
+I usually don't blog but when I do, I hope you find my musings entertaining or insightful. Thanks!
