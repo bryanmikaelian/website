@@ -16,7 +16,9 @@ In the past, I've worked at:
 
 The languages I enjoy writing and for how long (in no particular order):
 
-- Ruby (since 2010)
+- Ruby / JavaScript (since 2010)
 - Clojure (since 2014)
 - Golang (since 2015)
-- TypeScript (since 2018)
+- TypeScript (since 2018, although I'm out of practice)
+
+I'm also slowly attempting to learn Rust.
