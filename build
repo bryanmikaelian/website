@@ -14,13 +14,13 @@ entries=""
 for f in "$POSTS_DIR"/*.md; do
   [ -f "$f" ] || continue
   slug="$(basename "$f" .md)"
-  draft="$(lowdown -X draft "$f" 2>/dev/null || true)"
+  draft="$(python3 md.py -X draft "$f" 2>/dev/null || true)"
   [ "$draft" = "true" ] && continue
-  title="$(lowdown -X title "$f" | sed 's/^"//;s/"$//')"
-  date="$(lowdown -X date "$f")"
+  title="$(python3 md.py -X title "$f")"
+  date="$(python3 md.py -X date "$f")"
 
   # Build individual post page
-  body="$(lowdown -t html "$f")"
+  body="$(python3 md.py -t html "$f")"
   cat > "$OUT_DIR/$slug.html" <<EOF
 <!DOCTYPE html>
 <html lang="en">
