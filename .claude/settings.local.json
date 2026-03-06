@@ -1,10 +1,11 @@
 {
-  "enabledPlugins": {
-    "frontend-design@claude-plugins-official": true
-  },
   "permissions": {
     "allow": [
-      "Bash(./build:*)"
+      "Bash(./build:*)",
+      "Bash(grep:*)"
     ]
+  },
+  "enabledPlugins": {
+    "frontend-design@claude-plugins-official": true
   }
 }

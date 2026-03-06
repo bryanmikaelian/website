@@ -20,6 +20,8 @@ for f in "$POSTS_DIR"/*.md; do
   date="$(python3 md.py -X date "$f")"
 
   # Build individual post page
+  wordcount="$(python3 md.py -t html "$f" | sed 's/<[^>]*>//g' | wc -w | tr -d ' ')"
+  read_min=$(( (wordcount + 199) / 200 ))
   body="$(python3 md.py -t html "$f")"
   cat > "$OUT_DIR/$slug.html" <<EOF
 <!DOCTYPE html>
@@ -41,7 +43,7 @@ for f in "$POSTS_DIR"/*.md; do
 <p><a href="/">&larr; back</a></p>
 <article>
 <h1>$title</h1>
-<time>$date</time>
+<time>$date</time> &middot; $read_min min read
 $body
 </article>
 </body>
