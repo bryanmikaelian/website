@@ -1,0 +1,99 @@
+#!/bin/sh
+set -e
+
+SITE_TITLE="Bryan Mikaelian"
+POSTS_DIR="posts"
+OUT_DIR="_site"
+
+rm -rf "$OUT_DIR"
+mkdir -p "$OUT_DIR"
+cp style.css "$OUT_DIR/"
+
+# Collect posts: date|title|slug
+entries=""
+for f in "$POSTS_DIR"/*.md; do
+  [ -f "$f" ] || continue
+  slug="$(basename "$f" .md)"
+  draft="$(lowdown -X draft "$f" 2>/dev/null || true)"
+  [ "$draft" = "true" ] && continue
+  title="$(lowdown -X title "$f" | sed 's/^"//;s/"$//')"
+  date="$(lowdown -X date "$f")"
+
+  # Build individual post page
+  body="$(lowdown -t html "$f")"
+  cat > "$OUT_DIR/$slug.html" <<EOF
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>$title - $SITE_TITLE</title>
+<meta name="description" content="$title by $SITE_TITLE">
+<meta property="og:title" content="$title">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="$date">
+<meta property="og:site_name" content="$SITE_TITLE">
+<meta name="author" content="$SITE_TITLE">
+<link rel="canonical" href="/$slug.html">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<p><a href="/">&larr; back</a></p>
+<article>
+<h1>$title</h1>
+<time>$date</time>
+$body
+</article>
+</body>
+</html>
+EOF
+
+  entries="$entries
+$date|$title|$slug"
+done
+
+# Sort posts newest first
+sorted="$(echo "$entries" | sed '/^$/d' | sort -t'|' -k1 -r)"
+
+# Build index page
+post_list=""
+if [ -n "$sorted" ]; then
+  while IFS='|' read -r date title slug; do
+    [ -z "$slug" ] && continue
+    post_list="$post_list
+<li><time>$date</time> &mdash; <a href=\"/$slug.html\">$title</a></li>"
+  done <<EOF
+$sorted
+EOF
+fi
+
+cat > "$OUT_DIR/index.html" <<EOF
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>$SITE_TITLE</title>
+<meta name="description" content="Just a stubborn hacker, mostly harmless.">
+<meta property="og:title" content="$SITE_TITLE">
+<meta property="og:type" content="website">
+<meta property="og:description" content="Just a stubborn hacker, mostly harmless.">
+<meta property="og:site_name" content="$SITE_TITLE">
+<meta name="author" content="$SITE_TITLE">
+<link rel="canonical" href="/">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<h1>$SITE_TITLE</h1>
+<p><em>Just a stubborn hacker, mostly harmless.</em></p>
+<p><a href="https://github.com/bryanmikaelian">GitHub</a> &middot; <a href="https://manpage.dev/bryanmikaelian">manpage</a></p>
+<hr>
+<ul>
+$post_list
+</ul>
+</body>
+</html>
+EOF
+
+count="$(echo "$sorted" | sed '/^$/d' | wc -l)"
+echo "Built $count post(s) to $OUT_DIR/"
