@@ -70,7 +70,7 @@ I've been heads-down building features and knew, in the back of my mind, that te
 
 The agents aren't discovering anything I *couldn't* discover. But they're discovering things I *hadn't bothered to* because I was busy shipping. That's the same value a real retro provides. You stop building and ask: "what's broken?"
 
-## I am the EM of Agents
+## I am the the Team Lead of Agents
 
 I defined 12 AI agents with roles, ownership boundaries, and collaboration protocols. I asked them what's missing. They told me:
 
@@ -83,4 +83,4 @@ I defined 12 AI agents with roles, ownership boundaries, and collaboration proto
 
 Every one of these is a real problem. None of them required an AI to find. But having twelve focused perspectives report simultaneously to me? Now I know where to improve. 
 
-See you at performance review time. In the year of our Lord, I just ran a retro with AI agents. And the action items are real.
+See you at performance review time.
