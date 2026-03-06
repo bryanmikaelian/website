@@ -1,0 +1,3 @@
+[build]
+  command = "sudo apt-get update && sudo apt-get install -y lowdown && ./build"
+  publish = "_site"
