@@ -27,7 +27,7 @@ for f in "$POSTS_DIR"/*.md; do
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>$title - $SITE_TITLE</title>
+<title>$title | $SITE_TITLE</title>
 <meta name="description" content="$title by $SITE_TITLE">
 <meta property="og:title" content="$title">
 <meta property="og:type" content="article">
