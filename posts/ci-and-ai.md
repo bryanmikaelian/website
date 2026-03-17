@@ -1,3 +1,8 @@
+---
+title: CI and AI
+date: 2026-03-16
+---
+
 # CI and AI
 
 When I started as a Ruby on Rails programmer in 2010, TDD was deemed the one true way to write software. RSpec was the new hotness and everyone had tests automatically run on code changes. Things were so focused on quick feedback, we even had tools like `guard` give us OSX notifications (this was back in the Snow Leopard days). It was a period of simplicity and fast iteration.
